@@ -1,0 +1,6 @@
+Team Details:
+Name: fcb
+Club Owner: ahmad
+Value: 999.9
+Cups: 97
+Players:
