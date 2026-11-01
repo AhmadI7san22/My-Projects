@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+uploads/
+playwright-report/
+test-results/
+.npm-cache/
+.local-data/
+.local-preview.env
+.private/
+.publish/
+.env.*
+!.env.example

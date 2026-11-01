@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: jo-hassa
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+    rootDir: jo-hassa
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 24.15.0
+      - key: HOST
+        value: 0.0.0.0
+      - key: MEDIA_STORAGE
+        value: gridfs
+      - key: MONGOMS_DISABLE_POSTINSTALL
+        value: "1"
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false
+      - key: BOOTSTRAP_ADMIN_EMAIL
+        sync: false
+      - key: BOOTSTRAP_ADMIN_PASSWORD
+        sync: false
