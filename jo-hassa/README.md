@@ -46,7 +46,13 @@ See docs/STATUS.md for verification results and remaining operational limitation
 After building, npm run preview starts a loopback-only MongoDB-backed demo at http://localhost:4000 without a separate MongoDB installation. It uses mongodb-memory-server and stores local development data in ignored .local-data/. Set ADMIN_EMAIL and ADMIN_PASSWORD in .env before the first run to sign in to the CMS; otherwise random local credentials are saved in the ignored .local-preview.env file. This mode is development-only.
 
 ## Local team accounts
-The six local team accounts have been provisioned and verified through the login API. Their private credentials and permission descriptions are in .private/team-accounts.txt. These are local login identifiers, not real mailboxes. The entire .private/ directory is excluded from Git. Share only each member's own credentials. None of these team accounts has a system administrator role. To deliberately reprovision these same local accounts using the saved credential export, run npx tsx server/provision-team.ts while the local preview is stopped. This does not provision a production database.
+
+The six local team accounts have been provisioned and verified through the login API. The same six accounts have also been migrated to the hosted site and their logins verified. Their private credentials and permission descriptions are in .private/team-accounts.txt. These are local login identifiers, not real mailboxes. The entire .private/ directory is excluded from Git. Share only each member's own credentials. None of these team accounts has a system administrator role. To deliberately reprovision these same local accounts using the saved credential export, run npx tsx server/provision-team.ts while the local preview is stopped. This does not provision a production database.
 
 ## Free hosting
+
 See [docs/FREE_HOSTING.md](docs/FREE_HOSTING.md) for the free Render + MongoDB Atlas configuration. Use jo-hassa/render.yaml when deploying this project from the My-Projects monorepo. Production uploads can use MongoDB GridFS for persistence.
+
+## Live website
+
+https://jo-hassa.onrender.com — editors sign in at /admin. Hosting is Render Free with a MongoDB Atlas Free cluster. The free web service sleeps when idle; the first request may take about a minute. See docs/HOSTED_DEPLOYMENT.md for the verified deployment details.
